@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: sequential-job
 spec:
-  completions: 5 
+  completions: 1 
   backoffLimit: 6
   activeDeadlineSeconds: 120 
   template:
