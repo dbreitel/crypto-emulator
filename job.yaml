@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sequential-job
+spec:
+  completions: 5 
+  backoffLimit: 6
+  activeDeadlineSeconds: 120 
+  template:
+    metadata:
+      labels:
+        app: crypto-emu
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: crypto-emulator
+          image: diegob/crypto-emulator:1.6
